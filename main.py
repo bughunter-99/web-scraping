@@ -4,11 +4,10 @@ import json
 from recipe import Recipe
 from datetime import datetime
 all_recipes = []
-categories = ['indian']  # , 'chicken', 'paneer', 'mushroom',
-# 'baby corn', 'dinner', 'breakfast', 'lunch', 'snacks', 'bread', 'rice', 'cake', 'chinese', 'sea food', 'fish', 'vegitarian']
+categories = ['Appetizers and Snacks', 'Asian', 'BBQ and Grilling', 'Bread', 'Breakfast and Brunch', 'Cake', 'Chicken', 'Cookie',
+              'Dessert', 'Dinner', 'Drinks', 'Healthy', 'Indian', 'Italian', 'Mexican', 'Pasta and Noodle', 'Sea Food', 'Salad', 'Vegetarian', 'Vegan']
 start_time = datetime.now()
-f = open('data4.json', 'w')
-f.write('[')
+f = open('finalData.json', 'w')
 for category in categories:
     page = 1
     while True:
@@ -27,14 +26,9 @@ for category in categories:
             break
         else:
             page += 1
-        if page > 1:
-            break
     print(category, " : done")
     f.write(json.dumps(all_recipes, indent=2))
     all_recipes = []
-    f.write(',')
-
-f.write('{"status" : "OK"}]')
 f.close()
 
 end_time = datetime.now()

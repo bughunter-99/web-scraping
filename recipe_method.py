@@ -1,6 +1,7 @@
 import json
 import requests
 from bs4 import BeautifulSoup
+import uuid
 
 
 def getMoreInfo(url):
@@ -24,4 +25,8 @@ def getMoreInfo(url):
     open("data3.json", 'w').write(json.dumps(recipe_info_dict, indent=2))
 
 
-getMoreInfo("https://www.allrecipes.com/recipe/23600/worlds-best-lasagna/")
+# getMoreInfo("https://www.allrecipes.com/recipe/23600/worlds-best-lasagna/")
+
+categories = ['Appetizers and Snacks', 'Asian', 'BBQ and Grilling', 'Bread', 'Breakfast and Brunch', 'Cake', 'Chicken', 'Cookie',
+              'Dessert', 'Dinner', 'Drinks', 'Healthy', 'Indian', 'Italian', 'Mexican', 'Pasta and Noodle', 'Sea Food', 'Salad', 'Vegetarian']
+print(len(categories))

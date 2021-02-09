@@ -1,4 +1,4 @@
-from random import randint, choice
+import uuid
 from detailed_recipe import *
 
 
@@ -9,14 +9,9 @@ class Recipe:
         self.setAlldata()
 
     def setUid(self, length=10):
-        alphabet = list('abcdefghijklmnopqrstuvwxyz')
-        numbers = list('0123456789')
-        randomlist = alphabet + numbers
-        uuid = ''
-        for i in range(length):
-            uuid += str(choice(randomlist))
+        random_uuid = str(uuid.uuid4())
 
-        self.u_id = uuid
+        self.u_id = random_uuid
 
     def getUID(self):
         return self.u_id
