@@ -17,8 +17,6 @@ class DetailedRecipe:
             "div", class_="recipe-meta-item-header")
         recipe_body = soup.findAll(
             "div", class_="recipe-meta-item-body")
-        recipe_image = soup.find("div", class_="lazy-image").get("data-src")
-
         recipe_info_dict = {}
         recipe_info_dict["recipe_info"] = {i[:-1]: "{}{}".format(i, j) for i, j in dict(zip([x.text.strip() for x in recipe_head],
                                                                                             [x.text.strip() for x in recipe_body])).items()}
